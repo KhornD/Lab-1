@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    float min, t, sum, a1, a2, a3;
+    int max;
+    printf("Enter a1, a2, a3\n");
+    scanf("%f", &a1);
+    scanf("%f", &a2);
+    scanf("%f", &a3);
+    sum = a1 + a2 + a3;
+    if (a1 < a2 && a1 < a3)
+    {
+        printf ("min = a1\n");
+        min = a1;
+        if (a2 < a3)
+        {
+            printf ("max = a3\n");
+            max = a3;
+        }
+        else
+        {
+            printf ("max = a2\n");
+            max = a2;
+        }
+    }
+    if (a2 < a1 && a2 < a3)
+    {
+        printf ("min = a2\n");
+        min = a2;
+        if (a1 < a3)
+        {
+            printf ("max = a3\n");
+            max = a3;
+        }
+        else
+        {
+            printf ("max = a1\n");
+            max = a1;
+        }
+    }
+    if (a3 < a1 && a3 < a2)
+    {
+        printf ("min = a3\n");
+        min = a3;
+        if (a2 < a1)
+        {
+            printf ("max = a1\n");
+            max = a1;
+        }
+        else
+        {
+            printf ("max = a2\n");
+            max = a2;
+        }
+    }
+    if (max % 2 == 0)
+    {
+        t = (max / sum) * 100;
+        printf("%f\n", t);
+    }
+    else
+    {
+        printf("%f\n", max - min);
+    }
+    return 0;
+}
